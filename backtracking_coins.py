@@ -1,4 +1,9 @@
-def solver(coins: list[int], total, chosen_coins: list[int]) -> list[list[int]]:
+from typing import Optional
+
+
+def solver(
+    coins: list[int], total: int, chosen_coins: list[int]
+) -> Optional[list[list[int]]]:
     if total == 0:
         return [chosen_coins]
     if total < 0 or not coins:
@@ -17,4 +22,4 @@ def solver(coins: list[int], total, chosen_coins: list[int]) -> list[list[int]]:
     return []
 
 
-print(len(solver([1, 2, 5, 10, 20, 50, 100, 200], 200, [])))
+print(solver([1, 2, 5, 10, 20, 50, 100, 200], 200, []))
